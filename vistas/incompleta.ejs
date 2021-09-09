@@ -1,0 +1,16 @@
+<%- include("plantillas/header.ejs") %> 
+
+    <div class="card">
+        <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+            <img src="/pending.png" width="200px" height="200px">
+        </div>
+        <h1 style="color:#D1833D" class="centrao">Pago Pendiente!</h1>
+        <p class="centrao">Tu pago esta pendiente;<br /> Te damos los datos del pago:</p></br>
+        <hr>
+    </br>
+        <p><b>ID de pago:</b> <%= idpago %> </p></br>
+        <p><b>Tipo de pago:</b> <%= tipopago %> </p></br>
+        <p><b>External Reference:</b> <%= referex %> </p>
+    </div>
+
+<%- include("plantillas/footer.ejs") %> 

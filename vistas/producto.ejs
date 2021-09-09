@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zona de pagos</title>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script type="text/javascript" src="./index.js" defer></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
+  </head>
+  <body>
+    <main>
+      <section class="shopping-cart dark">
+        <div class="container" id="container">
+          <div class="block-heading">
+            <h2>Tienda</h2>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="col-md-12 col-lg-8">
+                <div class="items">
+                  <div class="product">
+                    <div class="info">
+                      <div class="product-details">
+                        <div class="row justify-content-md-center">
+                          <div class="col-md-3">
+                            <img class="img-fluid mx-auto d-block image .prueba" id="imagenproduct" src="<%= imagen %> ">
+                          </div>
+                          <div class="col-md-4 product-detail">
+                            <h5>Producto</h5>
+                            <div class="product-info">
+                              <p><b>Description: </b><span id="product-description"> <%= titulo %> </span><br>
+                              <b>Precio:</b> S/. <span id="unit-price"> <%= precio %> </span></p>
+                            </div>
+                          </div>
+                          <div class="col-md-3 product-detail">
+                            <label for="quantity"><h5>Cantidad</h5></label>
+                            <input type="number" id="quantity" value="<%= cantidad %>" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-4">
+                <div class="summary">
+                  <h3>Pagos</h3>
+                  <div class="summary-item"><span class="text">Total</span><span class="price" id="cart-total"></span></div>
+                  <button class="btn btn-primary btn-lg btn-block" id="checkout-btn">Proceder a la Revisión</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--payment-->
+      <section class="payment-form dark">
+        <div class="container_payment">
+          <div class="block-heading">
+            <h2>Revisión de Pago</h2>
+          </div>
+          <div class="form-payment">
+            <div class="products">
+              <h2 class="title">Resumen</h3>
+              <div class="item">
+                <span class="price" id="summary-price"></span>
+                <p class="item-name"><%= titulo %> x <span id="summary-quantity"></span></p>
+              </div>
+              <div class="total">Total<span class="price" id="summary-total"></span></div>
+            </div>
+            <div class="payment-details">
+              <div class="form-group col-sm-12">
+                <br>      
+                <div id="button-checkout" class = "botonPago">
+                </div>                 
+                <br>
+                <a id="go-back">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 10 10" class="chevron-left">
+                    <path fill="#009EE3" fill-rule="nonzero"id="chevron_left" d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"></path>
+                  </svg>
+                  Volver a la selección de productos.
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- footer -->
+    </br>
+      <center><h5> <a href="/" class="volver"> ← Volver a la tienda general</a> </h5></center>
+    </main>
+    <footer>
+      <div class="footer_logo"><img id="horizontal_logo" src="./Copia de Diseño sin título.png"></div>
+      <div class="footer_text">
+        <p>Visita nuestra web:</p>
+        <p><a href="https://new-tecnology.org">https://new-tecnology.org</p>
+      </div>
+		</footer>
+<%- include('plantillas/footer.ejs') %> 
